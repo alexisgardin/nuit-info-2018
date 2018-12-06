@@ -1,28 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-
-const styles = {
-    card: {
-        minWidth: 275,
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
-};
 
 class QuestionCard extends React.Component {
 
@@ -41,7 +23,7 @@ class QuestionCard extends React.Component {
     }
 
     render() {
-        const {key, title, resume, description, datePublished, tags} = this.props;
+        const {title, resume, description, datePublished, tags} = this.props;
         const isOpen = this.state.isOpen;
 
         return (
@@ -66,7 +48,7 @@ class QuestionCard extends React.Component {
                     }
                 </CardContent>
                 <CardActions>
-                    <Button size="small" onClick={this.toggleCard}>Voir plus</Button>
+                    <Button size="small" className="card-button" onClick={this.toggleCard}>Voir plus</Button>
                 </CardActions>
             </Card>
         );
@@ -74,12 +56,10 @@ class QuestionCard extends React.Component {
 }
 
 QuestionCard.propTypes = {
-    key: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     resume: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     datePublished: PropTypes.string.isRequired,
-    tags: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles)(QuestionCard);
+export default (QuestionCard);

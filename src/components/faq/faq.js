@@ -2,6 +2,8 @@ import React from 'react';
 import QuestionCard from './question-card';
 import qtns from './questions.json';
 
+import './faq.css';
+
 class Faq extends React.Component {
 
     render() {
@@ -11,7 +13,7 @@ class Faq extends React.Component {
             <div>
                 <h2>F.A.Q</h2>
                 <h3>{qtns.sub_title}</h3>
-                <div>
+                <div className="cards">
                     {qs.map(question => (
                         <QuestionCard
                             key={question.index}

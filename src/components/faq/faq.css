@@ -1,0 +1,28 @@
+
+.cards {
+    display: flex;
+}
+
+.card {
+    margin: 4%;
+    width: 475px;
+}
+
+.bullet {
+    display: inline-block;
+    margin: 0 2px;
+    transform: scale(0.8);
+}
+
+.title {
+    font-size: 14px;
+}
+
+.pos {
+    margin-bottom: 12px;
+}
+
+.card-button {
+    text-align: center;
+    margin: auto !important;
+}
