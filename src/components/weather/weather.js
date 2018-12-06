@@ -11,12 +11,14 @@ class Weather extends Component {
         return (
             <Card className='card'>
                 <div className='cardHeader'>
-                    <Icon>wb_sunny</Icon>
+                    <div className='cardIcon'>
+                        <Icon>wb_sunny</Icon>
+                    </div>
+                    <div className='cardTitle'>
+                        Météo
+                    </div>
                 </div>
                 <CardContent>
-                    <Typography color="textPrimary" gutterBottom>
-                        Weather
-                    </Typography>
                     <img src={require("../../assets/img/clear_sky.svg")} width={100}/>
                 </CardContent>
             </Card>
