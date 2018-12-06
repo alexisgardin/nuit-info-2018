@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Faq from './components/faq/faq';
 import Joyride from 'react-joyride';
 import './App.css';
+import Dashboard from "./layouts/dashboard/dashboard";
 
 class App extends Component {
     state = {
@@ -52,6 +53,7 @@ class App extends Component {
                     </a>
                 </header>
                 <Faq/>
+                <Dashboard/>
             </div>
         );
     }

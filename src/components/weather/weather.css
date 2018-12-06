@@ -1,0 +1,17 @@
+.card {
+    margin-top: 50px;
+}
+
+.cardHeader {
+    background: orange;
+    padding: 15px;
+    width: 100px;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-top: -20px;
+}
+
+.cardHeader *{
+    font-size: 40pt!important;
+    color: white;
+}
