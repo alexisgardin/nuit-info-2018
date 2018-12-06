@@ -3,6 +3,7 @@ import {Grid, Col, Row} from "react-bootstrap";
 
 import Weather from "../../components/weather/weather";
 import "./dashboard.css"
+import TodoList from "../../components/todoList/todoList";
 
 class Dashboard extends Component {
     render() {
@@ -12,6 +13,9 @@ class Dashboard extends Component {
                     <Row>
                         <Col xs={12} md={6}>
                             <Weather/>
+                        </Col>
+                        <Col xs={12} md={6}>
+                            <TodoList/>
                         </Col>
                     </Row>
                 </Grid>

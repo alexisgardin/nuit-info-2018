@@ -3,27 +3,27 @@ import CardContent from "@material-ui/core/CardContent/CardContent";
 import Card from "@material-ui/core/Card/Card";
 import Icon from '@material-ui/core/Icon';
 
-import '../../assets/css/card.css'
-import './weather.css'
+import '../../assets/css/card.css';
+import './todoList.css';
 
-class Weather extends Component {
+class TodoList extends Component {
     render() {
         return (
             <Card className='card'>
                 <div className='cardHeader'>
-                    <div className='cardIcon cardIconWeather'>
-                        <Icon>wb_sunny</Icon>
+                    <div className='cardIcon cardIconTodo'>
+                        <Icon>event_available</Icon>
                     </div>
                     <div className='cardTitle'>
-                        Météo
+                        Tâches
                     </div>
                 </div>
                 <CardContent>
-                    <img src={require("../../assets/img/clear_sky.svg")} width={100}/>
+                    TODO
                 </CardContent>
             </Card>
         );
     }
 }
 
-export default Weather;
+export default TodoList;
