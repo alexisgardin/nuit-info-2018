@@ -1,0 +1,21 @@
+{
+  "sub_title": "Vous vous posez des questions? Nous avons peut être déjà répondu à l'une d'entre elles.",
+  "questions_cards": [
+    {
+      "title": "Comment activer le mode nuit ?",
+      "resume": "Bouton switch, ou localisation",
+      "description": "Bla bla bla bla ",
+      "datePublished": "19 MAI 2017",
+      "tags": [],
+      "index": 1
+    },
+    {
+      "title": "Comment activer les aides sur le site ?",
+      "resume": "Bouton switch pour lancer un tutoriel",
+      "description": "Bla bla bla bla ",
+      "datePublished": "19 MAI 2017",
+      "tags": [],
+      "index": 2
+    }
+  ]
+}

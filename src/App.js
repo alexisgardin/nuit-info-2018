@@ -1,14 +1,44 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import Faq from './components/faq/faq';
+import Joyride from 'react-joyride';
 import './App.css';
 
 class App extends Component {
+    state = {
+        run: false,
+        steps: [
+            {
+                target: '.my-first-step',
+                content: 'This if my awesome feature!',
+                placement: 'bottom',
+            },
+            {
+                target: '.my-other-step',
+                content: 'This if my awesome feature!',
+                placement: 'bottom',
+            },
+        ]
+    };
+
+    componentDidMount() {
+        this.setState({run: true});
+    }
+
+    callback = (data) => {
+        const {action, index, type} = data;
+    };
+
     render() {
+        const {steps, run} = this.state;
+
         return (
             <div className="App">
+                <Joyride
+                    steps={steps}
+                    run={run}
+                    callback={this.callback}
+                />
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
                     <p>
                         Edit <code>src/App.js</code> and save to reload.
                     </p>
