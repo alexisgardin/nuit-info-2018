@@ -10,6 +10,7 @@ import Button from "@material-ui/core/es/Button/Button";
 import {ACTIONS, EVENTS} from "react-joyride/es/constants";
 import NavBar from '../../components/nav/navbar';
 import Footer from '../../components/footer/footer';
+import ChatBot from "../../components/chatBot/ChatBot";
 
 class Dashboard extends Component {
     state = {
@@ -113,6 +114,7 @@ class Dashboard extends Component {
 
         return (
             <div className='demo-wrapper'>
+			  <ChatBot/>
                 <NavBar/>
                 <Joyride
                     scrollToFirstStep

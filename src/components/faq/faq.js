@@ -5,6 +5,7 @@ import NavBar from '../../components/nav/navbar';
 import Footer from '../../components/footer/footer';
 
 import './faq.css';
+import ChatBot from "../chatBot/ChatBot";
 
 class Faq extends React.Component {
 
@@ -13,6 +14,7 @@ class Faq extends React.Component {
 
 	return (
 		<div className="faq">
+		  <ChatBot/>
 		  <NavBar/>
 		  <h2>F.A.Q</h2>
 		  <h3>{qtns.sub_title}</h3>
