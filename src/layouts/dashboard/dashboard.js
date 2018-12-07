@@ -123,8 +123,8 @@ class Dashboard extends Component {
 		  />
 
                 <div className="hero_content">
-                    <Button className="hero__start" onClick={this.handleClickStart}>
-                        Commencer le tutoriel !
+                    <Button className="hero__start" style={{color: 'white'}} onClick={this.handleClickStart}>
+                        Besoin d'aide ? Cliquez ici.
                     </Button>
                 </div>
                 <Grid container spacing={24}>
@@ -138,7 +138,7 @@ class Dashboard extends Component {
                             <TodoList/>
                         </div>
                     </Grid>
-                    <Grid item  lg={4}>
+                    <Grid item lg={4}>
                         <div className="map">
                             <MapCard/>
                         </div>
