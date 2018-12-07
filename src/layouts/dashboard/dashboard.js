@@ -25,7 +25,7 @@ class Dashboard extends Component {
                 title: "Bienvenue!"
             },
             {
-                content: "Cette carte vous permet de visualiser la météo de la semaine à l'endroit où vous vous trouvez.",
+                content: "Ainsi vous pouvez visualiser la météo de la semaine selon votre géolocalisation. Si elle ne s'affiche pas actualisez la page ;)",
                 textAlign: "center",
                 target: ".weather",
                 placement: "bottom",
@@ -49,78 +49,78 @@ class Dashboard extends Component {
         stepIndex: 0
     };
 
-  static propTypes = {
-	joyride: PropTypes.shape({
-	  callback: PropTypes.func
-	})
-  };
+    static propTypes = {
+        joyride: PropTypes.shape({
+            callback: PropTypes.func
+        })
+    };
 
-  static defaultProps = {
-	joyride: {}
-  };
+    static defaultProps = {
+        joyride: {}
+    };
 
-  handleClickStart = e => {
-	e.preventDefault();
-	console.log("in start");
+    handleClickStart = e => {
+        e.preventDefault();
+        console.log("in start");
 
-	this.setState({
-	  run: true,
-	  stepIndex: 0
-	});
-  };
+        this.setState({
+            run: true,
+            stepIndex: 0
+        });
+    };
 
-  handleClickNextButton = () => {
-	const {stepIndex} = this.state;
+    handleClickNextButton = () => {
+        const {stepIndex} = this.state;
 
-	if (this.state.stepIndex === 2) {
-	  this.setState({
-		stepIndex: stepIndex + 1
-	  });
-	}
-  };
+        if (this.state.stepIndex === 2) {
+            this.setState({
+                stepIndex: stepIndex + 1
+            });
+        }
+    };
 
-  handleJoyrideCallback = data => {
-	const {joyride} = this.props;
-	const {action, index, type} = data;
+    handleJoyrideCallback = data => {
+        const {joyride} = this.props;
+        const {action, index, type} = data;
 
-	//if (status === STATUS.RUNNING) {
-	if (type === EVENTS.TOUR_END && this.state.run) {
-	  // Need to set our running state to false, so we can restart if we click start again.
-	  this.setState({run: false});
-	} else if (type === EVENTS.STEP_AFTER) {
-	  // Update state to advance the tour
-	  this.setState({stepIndex: index + (action === ACTIONS.PREV ? -1 : 1)});
-	} else if (type === EVENTS.TOOLTIP_CLOSE) {
-	  this.setState({stepIndex: index + 1});
-	}
-	//}
+        //if (status === STATUS.RUNNING) {
+        if (type === EVENTS.TOUR_END && this.state.run) {
+            // Need to set our running state to false, so we can restart if we click start again.
+            this.setState({run: false});
+        } else if (type === EVENTS.STEP_AFTER) {
+            // Update state to advance the tour
+            this.setState({stepIndex: index + (action === ACTIONS.PREV ? -1 : 1)});
+        } else if (type === EVENTS.TOOLTIP_CLOSE) {
+            this.setState({stepIndex: index + 1});
+        }
+        //}
 
-	if (typeof joyride.callback === "function") {
-	  joyride.callback(data);
-	} else {
-	  console.group(type);
-	  console.log(data); //eslint-disable-line no-console
-	  console.groupEnd();
-	}
-  };
+        if (typeof joyride.callback === "function") {
+            joyride.callback(data);
+        } else {
+            console.group(type);
+            console.log(data); //eslint-disable-line no-console
+            console.groupEnd();
+        }
+    };
 
-  render() {
-	const {loading, ...joyrideProps} = this.state;
-	const props = {
-	  ...joyrideProps,
-	  ...this.props.joyride
-	};
+    render() {
+        const {loading, ...joyrideProps} = this.state;
+        const props = {
+            ...joyrideProps,
+            ...this.props.joyride
+        };
 
-	return (
-		<div className='demo-wrapper'>
-		  <NavBar/>
-		  <Joyride
-			  scrollToFirstStep
-			  showProgress
-			  showSkipButton
-			  {...props}
-			  callback={this.handleJoyrideCallback}
-		  />
+        return (
+            <div className='demo-wrapper'>
+                <NavBar/>
+                <Joyride
+                    scrollToFirstStep
+                    showProgress
+                    showSkipButton
+                    {...props}
+                    callback={this.handleJoyrideCallback}
+                />
 
                 <div className="hero_content">
                     <Button className="hero__start" style={{color: 'white'}} onClick={this.handleClickStart}>
@@ -144,6 +144,7 @@ class Dashboard extends Component {
                         </div>
                     </Grid>
                 </Grid>
+                <Footer/>
             </div>
         );
     }
