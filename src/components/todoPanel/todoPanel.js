@@ -14,7 +14,7 @@ import './todoPanel.css';
 class TodoPanel extends Component {
     render() {
         return (
-            <ExpansionPanel style={{background: this.props.color}}>
+            <ExpansionPanel style={{background: this.props.color}} defaultExpanded={true}>
                 <ExpansionPanelSummary expandIcon={<Icon>expand_more</Icon>}>
                     <Icon className="todoPanelIcon">{this.props.icon}</Icon>
                     <Typography variant="h6">{this.props.name}</Typography>
