@@ -34,7 +34,7 @@ function TopAppBar(props) {
             <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
                 <Toolbar style={styles.toolbar}>
                     <Typography variant="h6" color="inherit" className={classes.grow}>
-                        <img  src={logo} style={{ width: '65px', margin: '7px', paddingLeft: '25px', paddingTop: '5px'}} alt="logo"/>
+                        <NavLink to="/"><img  src={logo} style={{ width: '65px', margin: '7px', paddingLeft: '25px', paddingTop: '5px'}} alt="logo"/></NavLink>
                     </Typography>
                     <Button>
                         <NavLink to="/">Dashboard</NavLink>
