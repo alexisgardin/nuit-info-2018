@@ -37,7 +37,7 @@ function TopAppBar(props) {
                         <NavLink to="/"><img  src={logo} style={{ width: '65px', margin: '7px', paddingLeft: '25px', paddingTop: '5px'}} alt="logo"/></NavLink>
                     </Typography>
                     <Button>
-                        <NavLink to="/">Dashboard</NavLink>
+                        <NavLink to="/home">Dashboard</NavLink>
                     </Button>
                     <Button>
                         <NavLink to="/faq">FAQ</NavLink>

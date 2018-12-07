@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Switch from '@material-ui/core/Switch';
 import {connect} from "react-redux";
 import {setTheme, themes} from "../../../redux/actions/themeActions";
-import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 class ThemeSwitcher extends Component {
@@ -13,23 +12,19 @@ class ThemeSwitcher extends Component {
 
   render() {
 	return (
-		<div>
-		  <FormGroup row>
-			<FormControlLabel
-				style={{
-				  label: 'red'
-				}}
-				control={
-				  <Switch
-					  value={this.props.theme === themes.DARK}
-					  color="default"
-					  onChange={this.handleChange}
-				  />
-				}
-				label={'Theme ' + (this.props.theme === themes.DARK ? 'clair' : 'sombre')}
-			/>
-		  </FormGroup>
-		</div>
+		<FormControlLabel
+			style={{
+			  label: 'red'
+			}}
+			control={
+			  <Switch
+				  value={this.props.theme === themes.DARK}
+				  color="default"
+				  onChange={this.handleChange}
+			  />
+			}
+			label={'Mode ' + (this.props.theme === themes.DARK ? 'nuit' : 'jour')}
+		/>
 	);
   }
 }
