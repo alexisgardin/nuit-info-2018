@@ -12,21 +12,25 @@ import login from "./layouts/login/login";
 
 class App extends Component {
 
-    componentDidUpdate() {
-        this.props.setCoords(this.props.coords);
-        if (this.props.coords) {
-            axios.get(`https://api.sunrise-sunset.org/json?lat=${this.props.coords.latitude}&lng=${this.props.coords.longitude}&date=today&formatted=0`)
+    state={
+        automaticDone: false
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        nextProps.setCoords(nextProps.coords);
+        if (!this.state.automaticDone && nextProps.coords) {
+            axios.get(`https://api.sunrise-sunset.org/json?lat=${nextProps.coords.latitude}&lng=${nextProps.coords.longitude}&date=today&formatted=0`)
                 .then(response => {
                     let sunrise = new Date(response.data.results.sunrise);
                     let sunset = new Date(response.data.results.sunset);
                     let now = new Date();
 
                     if (now < sunrise || now > sunset) {
-                        //setToDark
                         this.props.setTheme(themes.DARK);
+                        this.setState({automaticDone: true});
                     } else {
-                        //setToLight
                         this.props.setTheme(themes.LIGHT);
+                        this.setState({automaticDone: true});
                     }
                 });
         }
