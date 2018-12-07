@@ -60,9 +60,9 @@ class Weather extends Component {
                         : null
                     }
                     {weatherForecast ?
-                        weatherForecast.map(forecast => {
+                        weatherForecast.map((forecast, index) => {
                             return (
-                                <WeatherForecastMin forecast={forecast} getWeatherImage={this.getWeatherImage}/>
+                                <WeatherForecastMin key={index} forecast={forecast} getWeatherImage={this.getWeatherImage}/>
                             );
                         })
                         : null
