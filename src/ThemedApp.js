@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
 import App from './App';
-import * as Colors from 'material-ui/colors';
+import * as Colors from '@material-ui/core/colors';
 
 import {connect} from "react-redux";
 
