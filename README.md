@@ -1,4 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+**PROJET NUIT DE L´INFO 2018**
+
+Réalisé par l´équipe Browny Factory :
+- GREGORY MERLET
+- SEBASTIEN TOSELLO
+- ALEXIS GARDIN
+- LAURA LOPEZ
+- JEREMI FERRE
+
+
+## UTILISATION DU CHAT BOT
+
+Cette application Web dispose d´un ChatBot perfectionné qui a la particularité d´être assez bavard et enervant.
+Pour y accéder, il suffit depuis la page d´accueil du site de cliquer sur le bouton d´aide situé en bas à droite, et de poser vos questions à Jacques, notre ChatBot. Vous pouvez aussi tout simplement discuter avec lui de sa vie et des gouts en tant que robot ultra avancé technologiquement.
 
 ## Available Scripts
 
