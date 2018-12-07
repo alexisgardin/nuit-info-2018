@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card, Icon, CardContent, ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails, FormControlLabel, Checkbox} from '@material-ui/core';
+import {Card, Icon, CardContent, Typography} from '@material-ui/core';
 
 import '../../assets/css/card.css';
 import './todoList.css';
@@ -13,9 +13,9 @@ class TodoList extends Component {
                     <div className='cardIcon cardIconTodo'>
                         <Icon>event_available</Icon>
                     </div>
-                    <div className='cardTitle'>
+                    <Typography className='cardTitle'>
                         Tâches
-                    </div>
+                    </Typography>
                 </div>
                 <CardContent>
                     <TodoPanel

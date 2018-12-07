@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import CardContent from "@material-ui/core/CardContent/CardContent";
-import Card from "@material-ui/core/Card/Card";
-import Icon from '@material-ui/core/Icon';
+import {Card, Icon, CardContent, Typography} from '@material-ui/core';
 
 import '../../assets/css/card.css'
 import './weather.css'
@@ -14,9 +12,9 @@ class Weather extends Component {
                     <div className='cardIcon cardIconWeather'>
                         <Icon>wb_sunny</Icon>
                     </div>
-                    <div className='cardTitle'>
+                    <Typography className='cardTitle'>
                         Météo
-                    </div>
+                    </Typography>
                 </div>
                 <CardContent>
                     <img src={require("../../assets/img/clear_sky.svg")} width={100}/>
