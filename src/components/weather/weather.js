@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import '../../assets/css/card.css'
 import './weather.css'
+import WeatherForecastMin from "../weatherForecastMin/weatherForecastMin";
 
 const API_URL = 'https://api.openweathermap.org/data/2.5/';
 const API_KEY = '8bc778bbac5322ebf2cc2ee51724786f';
@@ -11,7 +12,8 @@ const API_KEY = '8bc778bbac5322ebf2cc2ee51724786f';
 class Weather extends Component {
 
     state={
-        weatherData: null
+        weatherData: null,
+        weatherForecast: null
     }
 
     componentWillMount(){
@@ -25,12 +27,17 @@ class Weather extends Component {
         axios.get(`${API_URL}weather`, {params: params})
             .then(response => {
                 this.setState({weatherData: response.data});
+                axios.get(`${API_URL}forecast`, {params: params})
+                    .then(forecastResponse => {
+                        this.setState({weatherForecast: this.extractFiveDays(forecastResponse.data)});
+                    });
             });
     }
 
     render() {
         const weatherData = this.state.weatherData;
-        console.log(weatherData)
+        const weatherForecast = this.state.weatherForecast;
+        console.log(weatherData, weatherForecast)
         return (
             <Card className='card'>
                 <div className='cardHeader'>
@@ -43,11 +50,19 @@ class Weather extends Component {
                 </div>
                 <CardContent>
                     {weatherData ?
-                        <div>
+                        <div className="weatherMainInfos">
                             <img src={this.getWeatherImage(weatherData.weather[0].icon)} width={100}/>
                             <Typography variant="h5" className="weatherLocation">{weatherData.name}</Typography>
                             <Typography variant="h2" className="weatherTemp">{weatherData.main.temp}<span className="weatherTempUnit">°C</span></Typography>
                         </div>
+                        : null
+                    }
+                    {weatherForecast ?
+                        weatherForecast.map(forecast => {
+                            return (
+                                <WeatherForecastMin forecast={forecast} getWeatherImage={this.getWeatherImage}/>
+                            );
+                        })
                         : null
                     }
                 </CardContent>
@@ -116,6 +131,28 @@ class Weather extends Component {
         }
 
         return require(`../../assets/img/${iconName}.svg`);
+    }
+
+    extractFiveDays(response) {
+        let weatherList = response['list'];
+
+        let today = new Date();
+
+        let result = new Array();
+
+        for(let i = 1; i < 6; i++){
+            let dayDate = new Date();
+            dayDate.setDate(today.getDate() + i);
+            let month = (dayDate.getMonth()+1 < 10) ? `0${dayDate.getMonth()+1}` : dayDate.getMonth()+1;
+            let date = (dayDate.getDate() < 10) ? `0${dayDate.getDate()}` : dayDate.getDate();
+
+            weatherList.forEach(day => {
+                if(day.dt_txt === `${dayDate.getFullYear()}-${month}-${date} 12:00:00`)
+                    result.push(day);
+            });
+        }
+
+        return result || [];
     }
 }
 
