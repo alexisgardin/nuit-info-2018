@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import Faq from './components/faq/faq';
+import NavBar from './components/nav/navbar';
+import Footer from './components/footer/footer';
+import Joyride from 'react-joyride';
 import Dashboard from "./layouts/dashboard/dashboard";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {geolocated} from 'react-geolocated';
@@ -8,6 +11,8 @@ import {connect} from "react-redux";
 
 import './App.css';
 import login from "./layouts/login/login";
+import {connect} from "react-redux";
+import {setCoord} from "./redux/actions/themeActions";
 
 class App extends Component {
 
@@ -30,6 +35,7 @@ class App extends Component {
 					  <Route exact path="/faq" component={Faq}/>
 					  <Route exact path="/home" component={Dashboard}/>
 					</Switch>
+					<Footer/>
 				  </div>
 				</BrowserRouter>
 				: null
