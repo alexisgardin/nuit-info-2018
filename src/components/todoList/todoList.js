@@ -46,6 +46,7 @@ class TodoList extends Component {
                         this.state.tasks.map((task, index) => {
                             return (
                                 <TodoPanel
+                                    key={index}
                                     index={index}
                                     name={task.typeName}
                                     icon={task.typeIcon}

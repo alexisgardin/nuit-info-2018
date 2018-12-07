@@ -17,7 +17,7 @@ class TodoPanel extends Component {
             <ExpansionPanel style={{background: this.props.color}}>
                 <ExpansionPanelSummary expandIcon={<Icon>expand_more</Icon>}>
                     <Icon className="todoPanelIcon">{this.props.icon}</Icon>
-                    <Typography variant="display1">{this.props.name}</Typography>
+                    <Typography variant="h6">{this.props.name}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <FormGroup>
@@ -26,6 +26,7 @@ class TodoPanel extends Component {
                                 this.props.tasks.map((task, index) => {
                                     return(
                                         <FormControlLabel
+                                            key={index}
                                             control={
                                                 <Checkbox
                                                     checked={task.checked}
@@ -39,7 +40,7 @@ class TodoPanel extends Component {
                                                     value="task.label"
                                                 />
                                             }
-                                            label={<Typography variant="headline">{task.label}</Typography>}/>
+                                            label={<Typography variant="subtitle1">{task.label}</Typography>}/>
                                     );
                                 })
                                 : null

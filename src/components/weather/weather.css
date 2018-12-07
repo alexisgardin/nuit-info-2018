@@ -1,3 +1,16 @@
 .cardIconWeather {
     background: orange;
 }
+
+.weatherLocation{
+    margin-top: 10px!important;
+}
+
+.weatherTemp{
+    margin-top: 10px!important;
+}
+
+.weatherTempUnit{
+    vertical-align: text-top;
+    font-size: 15pt!important;
+}
