@@ -13,8 +13,9 @@ class TodoList extends Component {
                 typeName: "Santé",
                 typeIcon: "favorite",
                 tasks: [
-                    {label: "Test1", checked: false},
-                    {label: "Test2", checked: false}
+                    {label: "Contrôles cardiaques", checked: false},
+                    {label: "Système de survie", checked: false},
+                    {label: "Bilan de santé final", checked: false}
                 ],
                 color: "#cd5c5c44"
             },
@@ -22,8 +23,10 @@ class TodoList extends Component {
                 typeName: "Matériel",
                 typeIcon: "memory",
                 tasks: [
-                    {label: "Test1", checked: false},
-                    {label: "Test2", checked: false}
+                    {label: "Panneaux solaires", checked: false},
+                    {label: "Eolionnes", checked: false},
+                    {label: "Maintenance des robots", checked: false},
+                    {label: "Contrôle du camp", checked: false}
                 ],
                 color: "#228b2244"
             }
@@ -38,7 +41,7 @@ class TodoList extends Component {
                         <Icon>event_available</Icon>
                     </div>
                     <Typography className='cardTitle'>
-                        Tâches
+                        Check-List / Suivi
                     </Typography>
                 </div>
                 <CardContent>

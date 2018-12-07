@@ -2,20 +2,44 @@
   "sub_title": "Vous vous posez des questions? Nous avons peut être déjà répondu à l'une d'entre elles.",
   "questions_cards": [
     {
-      "title": "Comment activer le mode nuit ?",
-      "resume": "Bouton switch, ou localisation",
-      "description": "Bla bla bla bla ",
-      "datePublished": "19 MAI 2017",
+      "title": "Qu'est ce que l'ExplorationBoard",
+      "resume": "Explication de l'application et de ses fonctionnalités",
+      "description": "ExplorationBoard est un outil vous aidant à mieux aborder vos voyages en conditions extrêmes. Que ce soit dans le désert du Namib ou dans les vents glacials de la sibérie, ou même lors d'une exploration spatiale, ExplorationBoard vous donnera des informations pour vous faciliter la (sur)vie.",
+      "datePublished": "08 DECEMBRE 2018",
       "tags": [],
       "index": 1
     },
     {
       "title": "Comment activer les aides sur le site ?",
-      "resume": "Bouton switch pour lancer un tutoriel",
-      "description": "Bla bla bla bla ",
-      "datePublished": "19 MAI 2017",
+      "resume": "Aides pour les débutants en nouvelles technologies",
+      "description": "Depuis la page principale de ExplorationBoard, vous pouvez remarquer un bouton pour accéder à l'aide au centre de la page. Ce bouton vous indiquera pas à pas comment fonctionnent les différentes données fournies.",
+      "datePublished": "12 NOVEMBRE 1997",
       "tags": [],
       "index": 2
+    },
+    {
+      "title": "Comment activer le mode nuit ?",
+      "resume": "Activation automatique ou manuelle",
+      "description": "Le mode nuit s'active de façon totalement transparente lorsque le soleil se couche sur votre localisation. Il est également possible de modifier manuellement le thème à l'aide du bouton situé en bas à droite de la page.",
+      "datePublished": "19 DECEMBRE 2018",
+      "tags": [],
+      "index": 3
+    },
+    {
+      "title": "A quoi sert le JackBot",
+      "resume": "Utilisation du JackBot",
+      "description": "JackBot est un assistant intelligent (légèrement énervant), qui vous aidera (peut-être) à trouver ce dont vous avez besoin, ou tout simplement à ne pas vous sentir seul lors de vos explorations en solitaire.",
+      "datePublished": "10 DECEMBRE 2018",
+      "tags": [],
+      "index": 4
+    },
+    {
+      "title": "Qui sommes-nous ?",
+      "resume": "Description de notre équipe",
+      "description": "Nous sommes de valeureux étudiants ayant développé cette application. Durant toute la nuit de l'info 2018, nous nous sommes divisé les différentes tâches de ce projet afin d'aboutir à une intégration d'un prototype démontrable. Voilà.",
+      "datePublished": "25 DECEMBRE 2018",
+      "tags": [],
+      "index": 5
     }
   ]
 }

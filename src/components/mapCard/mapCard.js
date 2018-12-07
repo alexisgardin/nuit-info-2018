@@ -17,7 +17,7 @@ class MapCard extends Component {
                         <Icon>map</Icon>
                     </div>
                     <Typography className='cardTitle'>
-                        Carte
+                        Position et Carte
                     </Typography>
                 </div>
                 <CardContent>
