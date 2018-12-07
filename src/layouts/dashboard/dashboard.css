@@ -1,4 +1,8 @@
 
+.demo-wrapper {
+    overflow: hidden;
+}
+
 /** JOYRIDE **/
 
 .demo__section {

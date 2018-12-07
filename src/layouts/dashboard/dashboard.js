@@ -12,42 +12,42 @@ import NavBar from '../../components/nav/navbar';
 import Footer from '../../components/footer/footer';
 
 class Dashboard extends Component {
-  state = {
-	continuous: true,
-	loading: false,
-	run: false,
-	steps: [
-	  {
-		content: "Bienvenue sur notre application, découvrez l'ensemble de ces fonctionalités.",
-		textAlign: "center",
-		target: ".hero_content",
-		placement: "bottom",
-		title: "Bienvenue!"
-	  },
-	  {
-		content: "Cette carte vous permet de visualiser la météo de la semaine à l'endroit où vous vous trouvez.",
-		textAlign: "center",
-		target: ".weather",
-		placement: "bottom",
-		title: "Voici la météo !"
-	  },
-	  {
-		content: "Vous trouverez ici vos tâches concernant la santé, et également le matériel",
-		textAlign: "center",
-		target: ".todolist",
-		placement: "bottom",
-		title: "La liste des tâches !"
-	  },
-	  {
-		content: "Vous êtes désorienté? Ce plan vous permettra de retrouver votre chemin facilement.",
-		textAlign: "center",
-		target: ".map",
-		placement: "bottom",
-		title: "Le plan !"
-	  }
-	],
-	stepIndex: 0
-  };
+    state = {
+        continuous: true,
+        loading: false,
+        run: false,
+        steps: [
+            {
+                content: "Bienvenue sur notre application, découvrez l'ensemble de ces fonctionalités.",
+                textAlign: "center",
+                target: ".hero_content",
+                placement: "bottom",
+                title: "Bienvenue!"
+            },
+            {
+                content: "Cette carte vous permet de visualiser la météo de la semaine à l'endroit où vous vous trouvez.",
+                textAlign: "center",
+                target: ".weather",
+                placement: "bottom",
+                title: "Voici la météo !"
+            },
+            {
+                content: "Vous trouverez ici vos tâches concernant la santé, et également le matériel",
+                textAlign: "center",
+                target: ".todolist",
+                placement: "bottom",
+                title: "La liste des tâches !"
+            },
+            {
+                content: "Vous êtes désorienté? Ce plan vous permettra de retrouver votre chemin facilement.",
+                textAlign: "center",
+                target: ".map",
+                placement: "bottom",
+                title: "Le plan !"
+            }
+        ],
+        stepIndex: 0
+    };
 
   static propTypes = {
 	joyride: PropTypes.shape({
@@ -122,32 +122,31 @@ class Dashboard extends Component {
 			  callback={this.handleJoyrideCallback}
 		  />
 
-		  <div className="hero_content">
-			<Button className="hero__start" onClick={this.handleClickStart}>
-			  Commencer le tutoriel !
-			</Button>
-		  </div>
-		  <Grid container spacing={24}>
-			<Grid item xs={4}>
-			  <div className="weather" onClick={this.handleClickNext}>
-				<Weather/>
-			  </div>
-			</Grid>
-			<Grid item xs={4}>
-			  <div className="todolist" onClick={this.handleClickNext}>
-				<TodoList/>
-			  </div>
-			</Grid>
-			<Grid item xs={4}>
-			  <div className="map">
-				<MapCard/>
-			  </div>
-			</Grid>
-		  </Grid>
-		  <Footer/>
-		</div>
-	);
-  }
+                <div className="hero_content">
+                    <Button className="hero__start" onClick={this.handleClickStart}>
+                        Commencer le tutoriel !
+                    </Button>
+                </div>
+                <Grid container spacing={24}>
+                    <Grid item lg={4}>
+                        <div className="weather" onClick={this.handleClickNext}>
+                            <Weather/>
+                        </div>
+                    </Grid>
+                    <Grid item lg={4}>
+                        <div className="todolist" onClick={this.handleClickNext}>
+                            <TodoList/>
+                        </div>
+                    </Grid>
+                    <Grid item  lg={4}>
+                        <div className="map">
+                            <MapCard/>
+                        </div>
+                    </Grid>
+                </Grid>
+            </div>
+        );
+    }
 }
 
 export default Dashboard;
