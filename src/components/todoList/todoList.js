@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import CardContent from "@material-ui/core/CardContent/CardContent";
-import Card from "@material-ui/core/Card/Card";
-import Icon from '@material-ui/core/Icon';
+import {Card, Icon, CardContent, ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails, FormControlLabel, Checkbox} from '@material-ui/core';
 
 import '../../assets/css/card.css';
 import './todoList.css';
+import TodoPanel from "../todoPanel/todoPanel";
 
 class TodoList extends Component {
     render() {
@@ -19,7 +18,15 @@ class TodoList extends Component {
                     </div>
                 </div>
                 <CardContent>
-                    TODO
+                    <TodoPanel
+                        name="Santé"
+                        icon="favorite"
+                        tasks={[{label: "Test1"}, {label: "Test2"}]}
+                        color="#cd5c5c44"/>
+                    <TodoPanel
+                        name="Matériel"
+                        icon="memory"
+                        color="#228b2244"/>
                 </CardContent>
             </Card>
         );
