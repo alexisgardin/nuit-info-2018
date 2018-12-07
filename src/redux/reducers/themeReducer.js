@@ -7,10 +7,14 @@ const defaultState = {
 const themeReducer = (state = defaultState, action) => {
   switch (action.type) {
 	case THEME:
-	  return {
-	    ...state,
+	  console.log('NEW THEME -> ' + action.payload);
+	  const newState = {
+		...state,
 		theme: action.payload
 	  };
+
+	  console.log(newState);
+	  return newState;
 	default:
 	  return state;
   }

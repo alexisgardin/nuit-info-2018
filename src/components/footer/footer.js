@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import CardContent from "@material-ui/core/CardContent/CardContent";
+import ThemeSwitcher from "./themeSwitcher/ThemeSwitcher";
 
 const styles = {
     root: {
@@ -10,7 +12,9 @@ const styles = {
         flexGrow: 1,
         position: 'fixed',
         bottom: '0',
-        width: '100%'
+        width: '100%',
+        paddingTop: '20px',
+        paddingBottom: '20px',
     },
     grow: {
         flexGrow: 1,
@@ -26,15 +30,16 @@ function Footer(props) {
 
     return (
         <footer className={classes.root}>
-            <Typography variant="h6" color="inherit" className={classes.grow}>
+            <Typography variant="h6" color="inherit" className={classes.grow} style={{fontFamily: 'Calibri Light'}}>
                 Made by the Browny Factory team.
+                <ThemeSwitcher/>
             </Typography>
         </footer>
     );
 }
 
 Footer.propTypes = {
-    classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Footer);

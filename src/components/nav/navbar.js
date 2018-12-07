@@ -7,16 +7,19 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import {NavLink} from 'react-router-dom';
 import './bar.css'
+import logo from '../../assets/img/desert.png';
 
 const styles = {
     toolbar: {
-        backgroundColor: '#fb9723',
+        background: 'transparent',
+        boxShadow: 'none',
     },
     root: {
         flexGrow: 1,
     },
     grow: {
         flexGrow: 1,
+        textAlign: 'left',
     },
     menuButton: {
         marginLeft: -12,
@@ -28,10 +31,10 @@ function TopAppBar(props) {
     const {classes} = props;
     return (
         <div className={classes.root}>
-            <AppBar position="static">
+            <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
                 <Toolbar style={styles.toolbar}>
                     <Typography variant="h6" color="inherit" className={classes.grow}>
-                        Insert logo
+                        <img  src={logo} style={{ width: '65px', margin: '7px', paddingLeft: '25px', paddingTop: '5px'}} alt="logo"/>
                     </Typography>
                     <Button>
                         <NavLink to="/">Dashboard</NavLink>

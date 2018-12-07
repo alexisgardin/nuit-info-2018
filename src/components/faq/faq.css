@@ -1,11 +1,19 @@
 
+.faq {
+    color: #f7f7f7;
+    font-family: 'Calibri Light', sans-serif;
+    font-size: 1.3rem;
+}
+
 .cards {
-    display: flex;
 }
 
 .card {
+    vertical-align: top;
+    display: inline-block;
     margin: 4%;
     width: 475px;
+    position: relative;
 }
 
 .bullet {
