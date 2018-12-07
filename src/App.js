@@ -3,8 +3,10 @@ import Faq from './components/faq/faq';
 import NavBar from './components/nav/navbar';
 import Footer from './components/footer/footer';
 import Joyride from 'react-joyride';
-import './App.css';
 import Dashboard from "./layouts/dashboard/dashboard";
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
+import './App.css';
 
 class App extends Component {
     state = {
@@ -35,17 +37,21 @@ class App extends Component {
         const {steps, run} = this.state;
 
         return (
-            <div className="App">
-                <NavBar />
-                <Joyride
-                    steps={steps}
-                    run={run}
-                    callback={this.callback}
-                />
-                <Faq/>
-                <Dashboard/>
-                <Footer />
-            </div>
+            <BrowserRouter>
+                <div className="App">
+                    <NavBar/>
+                    <Joyride
+                        steps={steps}
+                        run={run}
+                        callback={this.callback}
+                    />
+                    <Switch>
+                        <Route exact path="/faq" component={Faq}/>
+                        <Route exact path="/" component={Dashboard}/>
+                    </Switch>
+                    <Footer/>
+                </div>
+            </BrowserRouter>
         );
     }
 }
