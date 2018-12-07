@@ -8,7 +8,7 @@ import WeatherForecastMin from "../weatherForecastMin/weatherForecastMin";
 import {connect} from "react-redux";
 
 const API_URL = 'https://api.openweathermap.org/data/2.5/';
-const API_KEY = '8bc778bbac5322ebf2cc2ee51724786f';
+const API_KEY = '6391da4ec59ed91947c42757ba9792a5';
 
 class Weather extends Component {
 
@@ -17,7 +17,7 @@ class Weather extends Component {
         weatherForecast: null
     }
 
-    componentWillUpdate(nextProps, nextState, nextContext){
+    componentWillReceiveProps(nextProps, nextContext){
         if(nextProps.coords) {
             let params = {
                 lat: nextProps.coords.latitude,
