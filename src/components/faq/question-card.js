@@ -29,20 +29,20 @@ class QuestionCard extends React.Component {
         return (
             <Card className="card">
                 <CardContent>
-                    <Typography className="title" color="textSecondary" gutterBottom>
+                    <Typography className="title" color="textSecondary"  style={{fontFamily: 'Calibri Light'}} gutterBottom>
                         {tags}
                     </Typography>
-                    <Typography variant="h5" component="h2">
+                    <Typography variant="h5"  style={{fontFamily: 'Calibri Light'}} component="h2">
                         {title}
                     </Typography>
-                    <Typography className="pos" color="textSecondary">
+                    <Typography  style={{fontFamily: 'Calibri Light'}} className="pos" color="textSecondary">
                         {datePublished}
                     </Typography>
-                    <Typography component="p">
+                    <Typography  style={{fontFamily: 'Calibri Light'}} component="p">
                         {resume}
                     </Typography>
                     { isOpen === true ?
-                        <Typography component="p">
+                        <Typography  style={{fontFamily: 'Calibri Light'}} component="p">
                             {description}
                         </Typography> : null
                     }

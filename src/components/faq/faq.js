@@ -10,7 +10,7 @@ class Faq extends React.Component {
         const qs = qtns.questions_cards;
 
         return (
-            <div>
+            <div className="faq">
                 <h2>F.A.Q</h2>
                 <h3>{qtns.sub_title}</h3>
                 <div className="cards">
