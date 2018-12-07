@@ -5,6 +5,7 @@ import axios from 'axios'
 import '../../assets/css/card.css'
 import './weather.css'
 import WeatherForecastMin from "../weatherForecastMin/weatherForecastMin";
+import {connect} from "react-redux";
 
 const API_URL = 'https://api.openweathermap.org/data/2.5/';
 const API_KEY = '8bc778bbac5322ebf2cc2ee51724786f';
@@ -16,28 +17,29 @@ class Weather extends Component {
         weatherForecast: null
     }
 
-    componentWillMount(){
-        let params = {
-            lat: "43.640830",
-            lon: "7.008490",
-            appid: API_KEY,
-            units: "metric",
-            lang: "fr"
-        };
-        axios.get(`${API_URL}weather`, {params: params})
-            .then(response => {
-                this.setState({weatherData: response.data});
-                axios.get(`${API_URL}forecast`, {params: params})
-                    .then(forecastResponse => {
-                        this.setState({weatherForecast: this.extractFiveDays(forecastResponse.data)});
-                    });
-            });
+    componentWillUpdate(nextProps, nextState, nextContext){
+        if(nextProps.coords) {
+            let params = {
+                lat: nextProps.coords.latitude,
+                lon: nextProps.coords.longitude,
+                appid: API_KEY,
+                units: "metric",
+                lang: "fr"
+            };
+            axios.get(`${API_URL}weather`, {params: params})
+                .then(response => {
+                    this.setState({weatherData: response.data});
+                    axios.get(`${API_URL}forecast`, {params: params})
+                        .then(forecastResponse => {
+                            this.setState({weatherForecast: this.extractFiveDays(forecastResponse.data)});
+                        });
+                });
+        }
     }
 
     render() {
         const weatherData = this.state.weatherData;
         const weatherForecast = this.state.weatherForecast;
-        console.log(weatherData, weatherForecast)
         return (
             <Card className='card'>
                 <div className='cardHeader'>
@@ -156,4 +158,8 @@ class Weather extends Component {
     }
 }
 
-export default Weather;
+const mapStateToProps = state => ({
+   coords: state.themeReducer.coord
+});
+
+export default connect(mapStateToProps)(Weather);
