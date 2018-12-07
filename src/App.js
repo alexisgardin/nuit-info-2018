@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Faq from './components/faq/faq';
+import NavBar from './components/nav/navbar';
+import Footer from './components/footer/footer';
 import Joyride from 'react-joyride';
 import './App.css';
 import Dashboard from "./layouts/dashboard/dashboard";
@@ -34,26 +36,15 @@ class App extends Component {
 
         return (
             <div className="App">
+                <NavBar />
                 <Joyride
                     steps={steps}
                     run={run}
                     callback={this.callback}
                 />
-                <header className="App-header">
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-                </header>
                 <Faq/>
                 <Dashboard/>
+                <Footer />
             </div>
         );
     }
