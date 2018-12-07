@@ -17,6 +17,26 @@ class Weather extends Component {
         weatherForecast: null
     }
 
+    componentWillMount(){
+        if(this.props.coords) {
+            let params = {
+                lat: this.props.coords.latitude,
+                lon: this.props.coords.longitude,
+                appid: API_KEY,
+                units: "metric",
+                lang: "fr"
+            };
+            axios.get(`${API_URL}weather`, {params: params})
+                .then(response => {
+                    this.setState({weatherData: response.data});
+                    axios.get(`${API_URL}forecast`, {params: params})
+                        .then(forecastResponse => {
+                            this.setState({weatherForecast: this.extractFiveDays(forecastResponse.data)});
+                        });
+                });
+        }
+    }
+
     componentWillReceiveProps(nextProps, nextContext){
         if(nextProps.coords) {
             let params = {
