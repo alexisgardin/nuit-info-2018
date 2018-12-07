@@ -23,14 +23,18 @@ class TodoPanel extends Component {
                     <FormGroup>
                         {
                             this.props.tasks ?
-                                this.props.tasks.map(task => {
+                                this.props.tasks.map((task, index) => {
                                     return(
                                         <FormControlLabel
                                             control={
                                                 <Checkbox
-                                                    checked={false}
+                                                    checked={task.checked}
                                                     onChange={() => {
-                                                        console.log('click')
+                                                        let tasks = this.props.tasks;
+                                                        let newTask = task;
+                                                        newTask.checked = !task.checked;
+                                                        tasks[index] = newTask;
+                                                        this.props.updateTasks(this.props.index, tasks);
                                                     }}
                                                     value="task.label"
                                                 />

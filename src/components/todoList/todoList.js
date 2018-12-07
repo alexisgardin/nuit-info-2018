@@ -6,6 +6,30 @@ import './todoList.css';
 import TodoPanel from "../todoPanel/todoPanel";
 
 class TodoList extends Component {
+
+    state={
+        tasks: [
+            {
+                typeName: "Santé",
+                typeIcon: "favorite",
+                tasks: [
+                    {label: "Test1", checked: false},
+                    {label: "Test2", checked: false}
+                ],
+                color: "#cd5c5c44"
+            },
+            {
+                typeName: "Matériel",
+                typeIcon: "memory",
+                tasks: [
+                    {label: "Test1", checked: false},
+                    {label: "Test2", checked: false}
+                ],
+                color: "#228b2244"
+            }
+        ]
+    }
+
     render() {
         return (
             <Card className='card'>
@@ -18,18 +42,28 @@ class TodoList extends Component {
                     </Typography>
                 </div>
                 <CardContent>
-                    <TodoPanel
-                        name="Santé"
-                        icon="favorite"
-                        tasks={[{label: "Test1"}, {label: "Test2"}]}
-                        color="#cd5c5c44"/>
-                    <TodoPanel
-                        name="Matériel"
-                        icon="memory"
-                        color="#228b2244"/>
+                    {
+                        this.state.tasks.map((task, index) => {
+                            return (
+                                <TodoPanel
+                                    index={index}
+                                    name={task.typeName}
+                                    icon={task.typeIcon}
+                                    tasks={task.tasks}
+                                    color={task.color}
+                                    updateTasks={this.updateTasks.bind(this)}/>
+                            );
+                        })
+                    }
                 </CardContent>
             </Card>
         );
+    }
+
+    updateTasks(index, newTasks){
+        let tasks = this.state.tasks;
+        tasks[index].tasks = newTasks;
+        this.setState({tasks: tasks});
     }
 }
 
