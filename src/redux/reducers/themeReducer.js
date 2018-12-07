@@ -1,7 +1,7 @@
 import {THEME} from "../actions";
 
 const defaultState = {
-  theme: 'dark'
+  theme: 'light'
 };
 
 const themeReducer = (state = defaultState, action) => {
