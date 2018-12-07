@@ -1,0 +1,39 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+}
+
+.footer-text {
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+}
+
+.cadenas {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-image: url("../../assets/img/lock.png");
+}
+.unlock {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-image: url("../../assets/img/unlock.png");
+}
+.lescads {
+    text-align: ce;
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-text, .dg {
+        display: none;
+    }
+}
+
+.loginCard{
+    width: 800px!important;
+}
