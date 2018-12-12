@@ -1,0 +1,36 @@
+
+.faq {
+    color: #f7f7f7;
+    font-family: 'Calibri', sans-serif;
+    font-size: 1.3rem;
+}
+
+.cards {
+}
+
+.card {
+    vertical-align: top;
+    display: inline-block;
+    margin: 4%;
+    width: 475px;
+    position: relative;
+}
+
+.bullet {
+    display: inline-block;
+    margin: 0 2px;
+    transform: scale(0.8);
+}
+
+.title {
+    font-size: 14px;
+}
+
+.pos {
+    margin-bottom: 12px;
+}
+
+.card-button {
+    text-align: center;
+    margin: auto !important;
+}
